@@ -1,0 +1,65 @@
+{
+	"name": "hygindentation",
+	"displayName": "HYGIndentation",
+	"description": "Using Indent and Outdent commands while a specified bunch of characters and strings hold their ground (stay at the beginning of the line)",
+	"version": "0.0.1",
+	"publisher": "Max",
+	"engines": {
+		"vscode": "^1.34.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon:": "https://www.c-cam.de/wp-content/uploads/2019/05/icons8-privatgelände-50.png",
+	"activationEvents": [
+		"onCommand:extension.HYGIndent",
+		"onCommand:extension.HYGOutdent"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"keybindings": [{
+				"command": "extension.HYGIndent",
+				"key": "ctrl+tab",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "extension.HYGOutdent",
+				"key": "ctrl+shift+tab",
+				"when": "editorTextFocus"
+			}],
+		"configuration": {
+			"type": "object",
+			"title": "HYG Indentation configuration",
+			"properties": {
+				"HYGIndent.LeadingSpaces": {
+					"type": "boolean",
+					"default": true,
+					"description": "Refactoring a line if it starts with leading zeros before the 'search pattern'"
+				},
+				"HYGIndent.Pattern": {
+					"type": "string",
+					"default": "*,:C:,:T:",
+					"description": "Pattern that 'holds its ground' --> This patterns stay at the beginning of the line while indenting"
+				},
+				"HYGIndent.Delimiter": {
+					"type": "string",
+					"default": ",",
+					"description": "Delimiter to use to differenciate between the HoldYourGround Patterns"
+				}}
+			}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}

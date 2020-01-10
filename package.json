@@ -2,15 +2,19 @@
 	"name": "hygindentation",
 	"displayName": "HYGIndentation",
 	"description": "Using Indent and Outdent commands while a specified bunch of characters and strings hold their ground (stay at the beginning of the line)",
-	"version": "0.0.1",
-	"publisher": "Max",
+	"version": "1.0.0",
+	"publisher": "StarsKy1990",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/StarsKy1990/HYGIndentation.git"
+	  },
 	"engines": {
 		"vscode": "^1.34.0"
 	},
 	"categories": [
 		"Other"
 	],
-	"icon:": "https://www.c-cam.de/wp-content/uploads/2019/05/icons8-privatgelände-50.png",
+	"icon:": "https://www.c-cam.de/wp-content/uploads/2019/05/icons8-privatgelï¿½nde-50.png",
 	"activationEvents": [
 		"onCommand:extension.HYGIndent",
 		"onCommand:extension.HYGOutdent"
